@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: race
+  datasource:
+    url: jdbc:postgresql://localhost:5432/race_db
+    username: race
+    password: race
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  web:
+    error:
+      include-message: always
+
+  flyway:
+    enabled: true

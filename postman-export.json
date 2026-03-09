@@ -1,0 +1,171 @@
+{
+  "info": {
+    "name": "Race API - TP",
+    "description": "Collection Postman pour le TP API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Runners",
+      "item": [
+        {
+          "name": "Create runner",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/runners",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Alice\",\n  \"lastName\": \"Martin\",\n  \"email\": \"alice.martin@example.com\",\n  \"age\": 30\n}"
+            }
+          }
+        },
+        {
+          "name": "Get all runners",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/runners"
+          }
+        },
+        {
+          "name": "Get runner by id",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/runners/1"
+          }
+        },
+        {
+          "name": "Update runner",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/runners/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Alice\",\n  \"lastName\": \"Martin\",\n  \"email\": \"alice.updated@example.com\",\n  \"age\": 31\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete runner",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/runners/1"
+          }
+        },
+        {
+          "name": "Get races of a runner",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/runners/1/races"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Races",
+      "item": [
+        {
+          "name": "Create race",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/races",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Marathon de Paris\",\n  \"date\": \"2026-06-01\",\n  \"location\": \"Paris\",\n  \"maxParticipants\": 1000\n}"
+            }
+          }
+        },
+        {
+          "name": "Get all races",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/races"
+          }
+        },
+        {
+          "name": "Get race by id",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/races/1"
+          }
+        },
+        {
+          "name": "Update race",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/races/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Semi Marathon de Paris\",\n  \"date\": \"2026-06-01\",\n  \"location\": \"Paris\",\n  \"maxParticipants\": 1500\n}"
+            }
+          }
+        },
+        {
+          "name": "Count participants",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/races/1/participants/count"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Registrations",
+      "item": [
+        {
+          "name": "Register runner to race",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/races/1/registrations",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"runnerId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Get race participants",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/races/1/registrations"
+          }
+        }
+      ]
+    }
+  ]
+}
