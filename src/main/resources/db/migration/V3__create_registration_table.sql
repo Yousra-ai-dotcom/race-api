@@ -1,7 +1,7 @@
 CREATE TABLE registration (
     id BIGSERIAL PRIMARY KEY,
-    runner_id INTEGER NOT NULL,
-    race_id INTEGER NOT NULL,
+    runner_id BIGSERIAL NOT NULL,
+    race_id BIGSERIAL NOT NULL,
     registration_date DATE NOT NULL,
 
     CONSTRAINT fk_runner

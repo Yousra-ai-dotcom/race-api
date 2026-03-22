@@ -1,3 +1,5 @@
+# 👩‍💻 Yousra Ameur — Groupe SNI1
+
 # TP — Création d'une API REST : Gestion d'inscriptions à une course
 
 ## Objectif
@@ -20,7 +22,7 @@ Une organisation sportive souhaite mettre en place une plateforme permettant de 
 
 Chaque **coureur** peut s'inscrire à **plusieurs courses**, et chaque **course** peut accueillir **plusieurs coureurs**.
 
-Votre mission est de développer l'API qui permettra de gérer ces informations.
+L’API a été développée afin de répondre à ce besoin en permettant la gestion complète des coureurs, des courses et des inscriptions.
 
 ---
 
@@ -396,9 +398,9 @@ Si un **runner** ou une **race** n'existe pas :
 
 ---
 
-# Bonus (optionnel)
+# Bonus 
 
-Si vous avez terminé le TP, vous pouvez ajouter un filtre 
+J'ai  ajouté un filtre 
 sur le location pour le endpoint de récupération des courses
 
 ## Filtrage
@@ -409,14 +411,28 @@ GET /races?location=Paris
 
 ---
 
-# Livrables
+---
 
-Vous devez rendre :
+##  Tests
 
-* le **code source**
-* un **README expliquant comment lancer le projet**
-* les **endpoints implémentés**
+Les endpoints ont été testés avec **Postman**.
+
+Les données ont été vérifiées via **Adminer**.
+
+Tests réalisés :
+- création de runners et races
+- inscription des coureurs aux courses
+- vérification du nombre de participants
+- test des règles métier (409, 404, 400)
 
 ---
 
-Bon développement !
+##  Implémentation
+
+L’API a été développée progressivement :
+
+1. mise en place de la gestion des runners (CRUD)
+2. mise en place de la gestion des races
+3. implémentation des inscriptions (registrations)
+4. ajout des règles métier (validation email, limite de participants, doublons)
+5. ajout du bonus : filtrage des courses par localisation
